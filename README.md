@@ -1,18 +1,19 @@
 # Galerie Doro
 
-Statische Website fuer eine Galerie mit Startseite, Ausstellungsreitern,
-Kuenstlerbereich, Werkfilter, Besuchsinformationen und Kontaktlink.
+Private Astro-Website fuer eine Galerie. Enthalten sind Startseite, Dorothea
+Spund, Ausstellungen, Events, Kuenstleruebersicht, Kontakt und Impressum.
 
-## Lokal ansehen
+## Entwicklung
 
 ```bash
-python3 -m http.server 8000
+pnpm install
+pnpm dev
 ```
 
-Danach im Browser `http://localhost:8000` oeffnen.
+## Build
 
-## Veroeffentlichung
+```bash
+pnpm build
+```
 
-Die Seite ist fuer GitHub Pages geeignet. Sobald das richtige GitHub-Konto und
-Repository bestaetigt sind, kann der Ordner als Repository gepusht und GitHub
-Pages fuer den Branch `main` aktiviert werden.
+Die Seite ist fuer GitHub Pages als Projektseite unter `/doro` vorbereitet.

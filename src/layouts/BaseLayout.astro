@@ -1,0 +1,45 @@
+---
+import { navItems } from "../data/site";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Galerie Doro zeigt zeitgenoessische Kunst, Ausstellungen, Events und Editionen." } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const pageTitle = title === "Galerie Doro" ? title : `${title} | Galerie Doro`;
+const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href={`${base}styles/global.css`} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={pathFor("/")} aria-label="Galerie Doro Startseite">
+        <span class="brand-mark"></span>
+        <span>Galerie Doro</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        {navItems.map((item) => <a href={pathFor(item.href)}>{item.label}</a>)}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <p>Galerie Doro</p>
+      <nav aria-label="Footer">
+        <a href={pathFor("/impressum/")}>Impressum</a>
+        <a href={pathFor("/kontakt/")}>Kontakt</a>
+      </nav>
+    </footer>
+  </body>
+</html>

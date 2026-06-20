@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { artists } from "../data/site";
+---
+
+<BaseLayout title="Kuenstler">
+  <PageHero
+    eyebrow="Vertretene Positionen"
+    title="Kuenstleruebersicht"
+    text="Ein kuratierter Ueberblick ueber die Kuenstlerinnen und Kuenstler der Galerie mit Medien, Orten, Statements und Social-Media-Links."
+  />
+
+  <section class="section artist-directory">
+    {artists.map((artist) => (
+      <article>
+        <div>
+          <p class="eyebrow">{artist.medium}</p>
+          <h2>{artist.name}</h2>
+          <span>{artist.location}</span>
+        </div>
+        <p>{artist.statement}</p>
+        <a class="text-link" href={artist.social}>Instagram</a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

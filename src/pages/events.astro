@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { events } from "../data/site";
+---
+
+<BaseLayout title="Events">
+  <PageHero
+    eyebrow="Kalender"
+    title="Kommende Events"
+    text="Preview-Abende, Artist Talks, Fuehrungen und Termine fuer die naechsten Wochen und Monate."
+  />
+
+  <section class="section event-list">
+    {events.map((event) => (
+      <article>
+        <div class="event-date">{event.date}</div>
+        <div>
+          <p class="eyebrow">{event.type}</p>
+          <h2>{event.title}</h2>
+          <p>{event.text}</p>
+          <a class="text-link" href={event.link}>Flyer oder Social Link</a>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

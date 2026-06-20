@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<BaseLayout title="Kontakt">
+  <PageHero
+    eyebrow="Besuch und Anfrage"
+    title="Kontakt"
+    text="Termine, Werklisten, Preview-Anmeldungen und allgemeine Fragen koennen direkt per E-Mail angefragt werden."
+  />
+
+  <section class="section contact-layout">
+    <div>
+      <h2>Galerie Doro</h2>
+      <p>Musterstrasse 12<br />76133 Karlsruhe</p>
+      <p>Mi-Fr 12-18 Uhr<br />Sa 11-16 Uhr und nach Vereinbarung</p>
+      <a class="button primary dark" href="mailto:hello@galerie-doro.example">E-Mail schreiben</a>
+    </div>
+    <form action="mailto:hello@galerie-doro.example" method="post" enctype="text/plain">
+      <label>
+        Name
+        <input name="name" autocomplete="name" />
+      </label>
+      <label>
+        E-Mail
+        <input name="email" type="email" autocomplete="email" />
+      </label>
+      <label>
+        Nachricht
+        <textarea name="message" rows="6"></textarea>
+      </label>
+      <button class="button primary dark" type="submit">Anfrage vorbereiten</button>
+    </form>
+  </section>
+</BaseLayout>

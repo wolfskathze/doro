@@ -1,0 +1,29 @@
+---
+interface Item {
+  title: string;
+  meta: string;
+  text: string;
+  tone?: string;
+  href?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="card-grid">
+  {
+    items.map((item) => (
+      <article class="content-card">
+        <div class={`preview ${item.tone ?? "tone-sand"}`}></div>
+        <p class="card-meta">{item.meta}</p>
+        <h2>{item.title}</h2>
+        <p>{item.text}</p>
+        {item.href && <a class="text-link" href={item.href}>Mehr ansehen</a>}
+      </article>
+    ))
+  }
+</div>

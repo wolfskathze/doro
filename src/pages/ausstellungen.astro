@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import CardGrid from "../components/CardGrid.astro";
+import { exhibitions } from "../data/site";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Ausstellungen">
+  <PageHero
+    eyebrow="Programm"
+    title="Ausstellungen"
+    text="Aktuelle, kommende und archivierte Ausstellungen mit Vorschaubildern, Kuenstlerverlinkungen, Texten und spaeteren Installationsansichten."
+  />
+
+  <section class="section">
+    <CardGrid
+      items={exhibitions.map((item) => ({
+        title: item.title,
+        meta: `${item.category} · ${item.dates}`,
+        text: `${item.text} Kuenstler: ${item.artist}.`,
+        tone: item.imageTone,
+        href: `${base}kuenstler/`,
+      }))}
+    />
+  </section>
+</BaseLayout>
