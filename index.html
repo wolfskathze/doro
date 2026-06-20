@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Galerie Doro zeigt zeitgenoessische Kunst, Ausstellungen, Editionen und kuratierte Veranstaltungen."
+    >
+    <title>Galerie Doro</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Galerie Doro Startseite">
+        <span class="brand-mark"></span>
+        <span>Galerie Doro</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#ausstellungen">Ausstellungen</a>
+        <a href="#kuenstler">Kuenstler</a>
+        <a href="#editionen">Editionen</a>
+        <a href="#besuch">Besuch</a>
+      </nav>
+      <a class="nav-action" href="mailto:hello@galerie-doro.example">Anfragen</a>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <img src="assets/gallery-hero.png" alt="Moderner Galerieraum mit kuratierten Kunstwerken">
+        <div class="hero-content">
+          <p class="eyebrow">Zeitgenoessische Galerie</p>
+          <h1 id="hero-title">Galerie Doro</h1>
+          <p>
+            Wechselnde Ausstellungen, kuratierte Editionen und persoenliche Beratung fuer
+            Sammlerinnen, Kuenstler und neugierige Besucher.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#ausstellungen">Aktuelle Schau</a>
+            <a class="button secondary" href="#kontakt">Termin planen</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="Galerie Ueberblick">
+        <div class="stat">
+          <strong>04</strong>
+          <span>laufende Positionen</span>
+        </div>
+        <div class="stat">
+          <strong>18</strong>
+          <span>verfuegbare Editionen</span>
+        </div>
+        <div class="stat">
+          <strong>Sa</strong>
+          <span>offene Fuehrung 15 Uhr</span>
+        </div>
+      </section>
+
+      <section class="section" id="ausstellungen">
+        <div class="section-heading">
+          <p class="eyebrow">Ausstellungen</p>
+          <h2>Aktuelle und kommende Reiter</h2>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Ausstellungsbereiche">
+          <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="aktuell">
+            Aktuell
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="kommend">
+            Kommend
+          </button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-tab="archiv">
+            Archiv
+          </button>
+        </div>
+
+        <div class="tab-panels">
+          <article class="tab-panel is-active" data-panel="aktuell">
+            <div>
+              <p class="panel-kicker">Bis 28. Juli</p>
+              <h3>Zwischen Licht und Linie</h3>
+              <p>
+                Malerei, Papierarbeiten und kleine skulpturale Setzungen ueber Raeume,
+                Erinnerungen und Materialspuren.
+              </p>
+            </div>
+            <a class="text-link" href="#kontakt">Besuch anfragen</a>
+          </article>
+          <article class="tab-panel" data-panel="kommend">
+            <div>
+              <p class="panel-kicker">Ab 10. August</p>
+              <h3>Neue Arbeiten auf Papier</h3>
+              <p>
+                Ein fokussiertes Kabinett mit Zeichnungen, Druckgrafiken und kleinformatigen
+                Unikaten.
+              </p>
+            </div>
+            <a class="text-link" href="#kontakt">Preview vormerken</a>
+          </article>
+          <article class="tab-panel" data-panel="archiv">
+            <div>
+              <p class="panel-kicker">Rueckblick</p>
+              <h3>Jahresprogramm 2025</h3>
+              <p>
+                Dokumentation vergangener Ausstellungen mit Werklisten, Installationsansichten
+                und Pressetexten.
+              </p>
+            </div>
+            <a class="text-link" href="#werke">Archiv ansehen</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="kuenstler">
+        <div class="section-heading">
+          <p class="eyebrow">Programm</p>
+          <h2>Kuenstlerische Positionen</h2>
+        </div>
+        <div class="artist-list">
+          <a href="#werke">Mira Feld</a>
+          <a href="#werke">Jonas Velt</a>
+          <a href="#werke">Lea Morgenstern</a>
+          <a href="#werke">Noah Stein</a>
+        </div>
+      </section>
+
+      <section class="section" id="werke">
+        <div class="section-heading row">
+          <div>
+            <p class="eyebrow">Werke</p>
+            <h2>Auswahl aus der Galerie</h2>
+          </div>
+          <div class="filters" aria-label="Werkfilter">
+            <button class="filter is-active" type="button" data-filter="all">Alle</button>
+            <button class="filter" type="button" data-filter="malerei">Malerei</button>
+            <button class="filter" type="button" data-filter="papier">Papier</button>
+            <button class="filter" type="button" data-filter="objekt">Objekt</button>
+          </div>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card" data-category="malerei">
+            <div class="work-image tone-coral"></div>
+            <div>
+              <p>Malerei</p>
+              <h3>Roter Hof</h3>
+              <span>Oel auf Leinwand, 90 x 70 cm</span>
+            </div>
+          </article>
+          <article class="work-card" data-category="papier">
+            <div class="work-image tone-ink"></div>
+            <div>
+              <p>Papier</p>
+              <h3>Faltung IV</h3>
+              <span>Tusche und Graphit, 42 x 30 cm</span>
+            </div>
+          </article>
+          <article class="work-card" data-category="objekt">
+            <div class="work-image tone-moss"></div>
+            <div>
+              <p>Objekt</p>
+              <h3>Leiser Sockel</h3>
+              <span>Keramik, Pigment, Messing</span>
+            </div>
+          </article>
+          <article class="work-card" data-category="malerei">
+            <div class="work-image tone-sand"></div>
+            <div>
+              <p>Malerei</p>
+              <h3>Fensterstudie</h3>
+              <span>Acryl und Kreide, 65 x 50 cm</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="editionen">
+        <div class="section-heading">
+          <p class="eyebrow">Editionen</p>
+          <h2>Kleine Formate, direkte Anfragen</h2>
+        </div>
+        <div class="copy-block">
+          <p>
+            Editionen, Kataloge und Werklisten koennen spaeter als eigener Shopbereich
+            ausgebaut werden. Die Struktur ist schon vorbereitet, damit Inhalte leicht
+            ergaenzt werden koennen.
+          </p>
+          <a class="button secondary dark" href="#kontakt">Verfuegbarkeit fragen</a>
+        </div>
+      </section>
+
+      <section class="section visit-band" id="besuch">
+        <div>
+          <p class="eyebrow">Besuch</p>
+          <h2>Geoeffnet nach Termin und samstags</h2>
+        </div>
+        <dl>
+          <div>
+            <dt>Adresse</dt>
+            <dd>Musterstrasse 12, 76133 Karlsruhe</dd>
+          </div>
+          <div>
+            <dt>Zeiten</dt>
+            <dd>Mi-Fr 12-18 Uhr, Sa 11-16 Uhr</dd>
+          </div>
+          <div>
+            <dt>Kontakt</dt>
+            <dd><a href="mailto:hello@galerie-doro.example">hello@galerie-doro.example</a></dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="footer" id="kontakt">
+      <p>Galerie Doro</p>
+      <a href="mailto:hello@galerie-doro.example">Kontakt aufnehmen</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
