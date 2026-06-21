@@ -664,3 +664,59 @@ textarea {
     flex-direction: column;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --logo-white: #000000;
+  }
+
+  .site-header {
+    border-bottom-color: rgba(255, 255, 255, 0.18);
+    background: #000000;
+  }
+
+  .brand-logo {
+    filter: invert(1);
+  }
+
+  .brand-fallback {
+    color: #ffffff;
+  }
+
+  .search-toggle,
+  .menu-toggle,
+  .site-search input {
+    border-color: rgba(255, 255, 255, 0.36);
+    background: #000000;
+    color: #ffffff;
+  }
+
+  .search-toggle[aria-expanded="true"],
+  .menu-toggle[aria-expanded="true"] {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .site-search input::placeholder {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .search-results,
+  .site-menu {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.72);
+    color: #ffffff;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.36);
+  }
+
+  .search-results a:hover,
+  .site-menu a:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .search-results span,
+  .empty-search,
+  .site-menu small {
+    color: rgba(255, 255, 255, 0.68);
+  }
+}
