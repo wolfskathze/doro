@@ -25,8 +25,7 @@ const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
   <body>
     <header class="site-header">
       <a class="brand" href={pathFor("/")} aria-label="Studierenden Galerie Spunst Startseite">
-        <span class="brand-logo" aria-hidden="true"></span>
-        <span class="sr-only">Studierenden Galerie Spunst</span>
+        <img class="brand-logo" src={`${base}assets/Logo-white.png`} alt="Studierenden Galerie Spunst" />
       </a>
       <div class="header-actions">
         <div class="search-shell" data-search-shell>

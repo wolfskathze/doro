@@ -70,12 +70,10 @@ a {
 }
 
 .brand-logo {
-  width: min(270px, 48vw);
-  aspect-ratio: 1935 / 781;
   display: block;
-  background: currentColor;
-  mask: url("../assets/Logo-mask.png") center / contain no-repeat;
-  -webkit-mask: url("../assets/Logo-mask.png") center / contain no-repeat;
+  width: min(270px, 48vw);
+  height: auto;
+  mix-blend-mode: difference;
 }
 
 .text-link,
@@ -106,15 +104,17 @@ a {
   height: 38px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(29, 33, 31, 0.28);
-  background: var(--control-bg);
-  color: var(--ink);
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
   cursor: pointer;
+  mix-blend-mode: difference;
 }
 
 .search-toggle[aria-expanded="true"] {
-  background: var(--ink);
-  color: var(--chalk);
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
 }
 
 .search-icon {
@@ -202,10 +202,11 @@ a {
   justify-content: center;
   justify-self: end;
   gap: 5px;
-  border: 1px solid rgba(29, 33, 31, 0.28);
-  background: var(--control-bg);
-  color: var(--ink);
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
   cursor: pointer;
+  mix-blend-mode: difference;
 }
 
 .menu-toggle span:not(.sr-only) {
@@ -215,8 +216,9 @@ a {
 }
 
 .menu-toggle[aria-expanded="true"] {
-  background: var(--ink);
-  color: var(--chalk);
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
 }
 
 .site-menu {
@@ -680,18 +682,23 @@ textarea {
     color: #ffffff;
   }
 
-  .search-toggle,
-  .menu-toggle,
   .site-search input {
     border-color: rgba(255, 255, 255, 0.36);
     background: #000000;
     color: #ffffff;
   }
 
+  .search-toggle,
+  .menu-toggle {
+    border-color: #ffffff;
+    background: transparent;
+    color: #ffffff;
+  }
+
   .search-toggle[aria-expanded="true"],
   .menu-toggle[aria-expanded="true"] {
-    background: #ffffff;
-    color: #000000;
+    background: transparent;
+    color: #ffffff;
   }
 
   .site-search input::placeholder {
