@@ -2,22 +2,22 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { exhibitions, events } from "../data/site";
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
-<BaseLayout title="Galerie Doro">
+<BaseLayout title="Studierenden Galerie Spunst">
   <section class="home-hero">
     <img src={`${base}assets/gallery-hero.png`} alt="Moderner Galerieraum mit kuratierten Kunstwerken" />
     <div class="home-hero-content">
       <p class="eyebrow">Zeitgenoessische Galerie</p>
-      <h1>Galerie Doro</h1>
+      <h1>Studierenden Galerie Spunst</h1>
       <p>
         Ausstellungen, persoenliche Kunstberatung, Editionen und Veranstaltungen rund um
-        die kuratorische Arbeit von Dorothea Spund.
+        die kuratorische Arbeit von Dorothea Spunst.
       </p>
       <div class="action-row">
         <a class="button primary" href={`${base}ausstellungen/`}>Ausstellungen</a>
-        <a class="button secondary" href={`${base}dorothea/`}>Dorothea Spund</a>
+        <a class="button secondary" href={`${base}dorothea/`}>Dorothea Spunst</a>
       </div>
     </div>
   </section>
@@ -40,7 +40,7 @@ const base = import.meta.env.BASE_URL;
   <section class="section split">
     <div>
       <p class="eyebrow">Profil</p>
-      <h2>Dorothea Spund verbindet Galeriearbeit, Forschung und Vermittlung.</h2>
+      <h2>Dorothea Spunst verbindet Galeriearbeit, Forschung und Vermittlung.</h2>
     </div>
     <div class="copy-block">
       <p>

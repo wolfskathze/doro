@@ -1,10 +1,28 @@
 export const navItems = [
   { href: "/", label: "Start" },
-  { href: "/dorothea/", label: "Dorothea Spund" },
+  { href: "/dorothea/", label: "Dorothea Spunst" },
   { href: "/ausstellungen/", label: "Ausstellungen" },
   { href: "/events/", label: "Events" },
   { href: "/kuenstler/", label: "Kuenstler" },
   { href: "/kontakt/", label: "Kontakt" },
+];
+
+export const menuItems = [
+  { href: "/dorothea/", label: "Dorothea Spunst", description: "Persona, Lebenslauf und akademische Laufbahn" },
+  { href: "/ausstellungen/", label: "Vergangene Ausstellungen", description: "Archiv, Texte, Bilder und beteiligte Positionen" },
+  { href: "/events/", label: "Anstehende Events", description: "Previews, Talks, Fuehrungen und kommende Termine" },
+  { href: "/kuenstler/", label: "Kuenstler", description: "Vertretene Kuenstlerinnen und Kuenstler" },
+  { href: "/kontakt/", label: "Kontakt", description: "Besuch, Anfrage und E-Mail" },
+];
+
+export const searchItems = [
+  { href: "/", title: "Startseite", text: "Allgemeine Informationen zur Studierenden Galerie Spunst und aktuelle Programmvorschau." },
+  { href: "/dorothea/", title: "Dorothea Spunst", text: "Galeristin, Lebenslauf, akademische Laufbahn und kuratorisches Profil." },
+  { href: "/ausstellungen/", title: "Vergangene Ausstellungen", text: "Ausstellungskategorien, Vorschaubilder, Texte, Kuenstler und Archiv." },
+  { href: "/events/", title: "Anstehende Events", text: "Previews, Flyer, Fotos, Instagram Links, Artist Talks und Fuehrungen." },
+  { href: "/kuenstler/", title: "Kuenstler", text: "Ueberblick ueber vertretene Kuenstler, Social Media, Medien und Statements." },
+  { href: "/kontakt/", title: "Kontakt", text: "Kontaktformular, E-Mail, Adresse und Besuchszeiten." },
+  { href: "/impressum/", title: "Impressum", text: "Rechtliche Angaben, Kontakt und Anbieterkennzeichnung." },
 ];
 
 export const artists = [
@@ -67,7 +85,7 @@ export const exhibitions = [
 
 export const events = [
   {
-    title: "Preview-Abend mit Dorothea Spund",
+    title: "Preview-Abend mit Dorothea Spunst",
     date: "10. August 2026",
     type: "Preview",
     link: "https://www.instagram.com/",

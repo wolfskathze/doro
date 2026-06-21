@@ -1,7 +1,7 @@
-# Galerie Doro
+# Studierenden Galerie Spunst
 
 Private Astro-Website fuer eine Galerie. Enthalten sind Startseite, Dorothea
-Spund, Ausstellungen, Events, Kuenstleruebersicht, Kontakt und Impressum.
+Spunst, Ausstellungen, Events, Kuenstleruebersicht, Kontakt und Impressum.
 
 ## Entwicklung
 

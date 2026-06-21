@@ -1,14 +1,15 @@
 ---
-import { navItems } from "../data/site";
+import { menuItems, searchItems } from "../data/site";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Galerie Doro zeigt zeitgenoessische Kunst, Ausstellungen, Events und Editionen." } = Astro.props;
-const base = import.meta.env.BASE_URL;
-const pageTitle = title === "Galerie Doro" ? title : `${title} | Galerie Doro`;
+const { title, description = "Studierenden Galerie Spunst zeigt zeitgenoessische Kunst, Ausstellungen, Events und Editionen." } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const siteName = "Studierenden Galerie Spunst";
+const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
 ---
 
@@ -23,23 +24,57 @@ const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={pathFor("/")} aria-label="Galerie Doro Startseite">
-        <span class="brand-mark"></span>
-        <span>Galerie Doro</span>
+      <a class="brand" href={pathFor("/")} aria-label="Studierenden Galerie Spunst Startseite">
+        <img
+          class="brand-logo"
+          src={`${base}assets/Logo.png`}
+          alt="Studierenden Galerie Spunst"
+          onerror="this.hidden=true;this.nextElementSibling.hidden=false"
+        />
+        <span class="brand-fallback" hidden>Studierenden Galerie Spunst</span>
       </a>
-      <nav class="site-nav" aria-label="Hauptnavigation">
-        {navItems.map((item) => <a href={pathFor(item.href)}>{item.label}</a>)}
+      <div class="header-actions">
+        <div class="search-shell" data-search-shell>
+          <button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search-panel" data-search-toggle>
+            <span class="search-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suche oeffnen</span>
+          </button>
+          <form class="site-search" id="site-search-panel" role="search" data-search-form hidden>
+            <label class="sr-only" for="site-search">Website durchsuchen</label>
+            <input id="site-search" name="q" type="search" placeholder="Suche" autocomplete="off" data-search-input />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menue oeffnen</span>
+        </button>
+      </div>
+      <nav class="site-menu" id="site-menu" aria-label="Seitennavigation" hidden data-site-menu>
+        {menuItems.map((item) => (
+          <a href={pathFor(item.href)}>
+            <span>{item.label}</span>
+            <small>{item.description}</small>
+          </a>
+        ))}
       </nav>
     </header>
     <main>
       <slot />
     </main>
     <footer class="footer">
-      <p>Galerie Doro</p>
+      <p>Studierenden Galerie Spunst</p>
       <nav aria-label="Footer">
         <a href={pathFor("/impressum/")}>Impressum</a>
         <a href={pathFor("/kontakt/")}>Kontakt</a>
       </nav>
     </footer>
+    <script type="application/json" id="search-data" set:html={JSON.stringify(searchItems.map((item) => ({
+      ...item,
+      href: pathFor(item.href),
+    })))}></script>
+    <script src={`${base}scripts/site.js`}></script>
   </body>
 </html>

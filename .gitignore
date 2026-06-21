@@ -4,3 +4,4 @@ dist/
 .config/
 .pnpm-store/
 .DS_Store
+AGENTS.md
