@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Studierenden Galerie Spunst zeigt zeitgenoessische Kunst, Ausstellungen, Events und Editionen." } = Astro.props;
+const { title, description = "Studierenden Galerie Spunst zeigt zeitgenössische Kunst, Ausstellungen, Events und Editionen." } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const siteName = "Studierenden Galerie Spunst";
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
@@ -34,7 +34,7 @@ const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
         <div class="search-shell" data-search-shell>
           <button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search-panel" data-search-toggle>
             <span class="search-icon" aria-hidden="true"></span>
-            <span class="sr-only">Suche oeffnen</span>
+            <span class="sr-only">Suche öffnen</span>
           </button>
           <form class="site-search" id="site-search-panel" role="search" data-search-form hidden>
             <label class="sr-only" for="site-search">Website durchsuchen</label>
@@ -46,7 +46,7 @@ const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
           <span></span>
           <span></span>
           <span></span>
-          <span class="sr-only">Menue oeffnen</span>
+          <span class="sr-only">Menü öffnen</span>
         </button>
       </div>
       <nav class="site-menu" id="site-menu" aria-label="Seitennavigation" hidden data-site-menu>

@@ -9,11 +9,11 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
   <section class="home-hero">
     <img src={`${base}assets/gallery-hero.png`} alt="Moderner Galerieraum mit kuratierten Kunstwerken" />
     <div class="home-hero-content">
-      <p class="eyebrow">Zeitgenoessische Galerie</p>
+      <p class="eyebrow">Zeitgenössische Galerie</p>
       <h1>Studierenden Galerie Spunst</h1>
       <p>
-        Ausstellungen, persoenliche Kunstberatung, Editionen und Veranstaltungen rund um
-        die kuratorische Arbeit von Dorothea Spunst.
+        Ausstellungen, Kooperationen, Lesungen und Pop-up-Formate rund um die
+        kuratorische Arbeit von Dorothea Spunst.
       </p>
       <div class="action-row">
         <a class="button primary" href={`${base}ausstellungen/`}>Ausstellungen</a>
@@ -24,16 +24,16 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
 
   <section class="info-strip">
     <article>
-      <strong>03</strong>
-      <span>Ausstellungsformate</span>
+      <strong>{exhibitions.length}</strong>
+      <span>Ausstellungen im Archiv</span>
     </article>
     <article>
-      <strong>04</strong>
-      <span>vertretene Kuenstler</span>
+      <strong>{events.length}</strong>
+      <span>Events und Formate</span>
     </article>
     <article>
-      <strong>Sa</strong>
-      <span>offene Fuehrung</span>
+      <strong>IG</strong>
+      <span>@galerie_spunst</span>
     </article>
   </section>
 
@@ -44,9 +44,9 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
     </div>
     <div class="copy-block">
       <p>
-        Die Website ist als redaktionelles Geruest aufgebaut: Biografie, Ausstellungen,
-        Kuenstlerprofile, Events, Kontakt und Impressum koennen Schritt fuer Schritt mit
-        echten Texten, Fotos, Flyern und Social-Media-Links gefuellt werden.
+        Die Galerie entsteht als bewegliches Archiv: private Ausstellungsräume,
+        Kooperationen mit Karlsruher Orten, studentische Positionen und Formate, die
+        zwischen Ausstellung, Gespräch und Einladung liegen.
       </p>
       <a class="text-link" href={`${base}dorothea/`}>Persona ansehen</a>
     </div>
@@ -65,7 +65,7 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
         <article>
           <span>{item.category}</span>
           <h3>{item.title}</h3>
-          <p>{item.dates} · {item.artist}</p>
+          <p>{item.dates} / {item.artist}</p>
         </article>
       ))}
       {events.slice(0, 1).map((item) => (

@@ -1,28 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import CardGrid from "../components/CardGrid.astro";
 import { exhibitions } from "../data/site";
 
 const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const archiveItems = [...exhibitions].reverse();
 ---
 
 <BaseLayout title="Ausstellungen">
   <PageHero
     eyebrow="Programm"
-    title="Ausstellungen"
-    text="Aktuelle, kommende und archivierte Ausstellungen mit Vorschaubildern, Kuenstlerverlinkungen, Texten und spaeteren Installationsansichten."
+    title="Vergangene Ausstellungen"
+    text="Ein wachsendes Archiv der Studierenden Galerie Spunst mit Flyern, Orten, Kooperationen, beteiligten Künstlern und späteren Installationsansichten."
   />
 
-  <section class="section">
-    <CardGrid
-      items={exhibitions.map((item) => ({
-        title: item.title,
-        meta: `${item.category} · ${item.dates}`,
-        text: `${item.text} Kuenstler: ${item.artist}.`,
-        tone: item.imageTone,
-        href: `${base}kuenstler/`,
-      }))}
-    />
+  <section class="section exhibition-archive">
+    {archiveItems.map((item) => (
+      <article>
+        <img src={`${base}${item.image}`} alt={item.alt} loading="lazy" />
+        <div>
+          <p class="card-meta">{item.category} / {item.dates}</p>
+          <h2>{item.title}</h2>
+          <p class="card-kicker">{item.artist} / {item.venue}</p>
+          <p>{item.text} {item.collaboration}.</p>
+          <a class="text-link" href={item.instagram}>Instagram ansehen</a>
+        </div>
+      </article>
+    ))}
   </section>
 </BaseLayout>
