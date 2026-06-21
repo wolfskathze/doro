@@ -41,7 +41,10 @@ const searchableItems = [
       <div class="header-actions">
         <div class="search-shell" data-search-shell>
           <button class="search-toggle" type="button" aria-expanded="false" aria-controls="site-search-panel" data-search-toggle>
-            <span class="search-icon" aria-hidden="true"></span>
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="10.5" cy="10.5" r="6.5"></circle>
+              <path d="M15.2 15.2L20 20"></path>
+            </svg>
             <span class="sr-only">Suche öffnen</span>
           </button>
           <form class="site-search" id="site-search-panel" role="search" data-search-form hidden>
