@@ -64,19 +64,17 @@ a {
   gap: 12px;
   font-weight: 750;
   text-decoration: none;
+  color: var(--ink);
 }
 
 .brand-logo {
-  width: auto;
-  height: clamp(84px, 14vw, 138px);
-  max-width: min(270px, 48vw);
-  object-fit: contain;
-}
-
-.brand-fallback {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 4vw, 38px);
-  font-weight: 500;
+  width: min(270px, 48vw);
+  aspect-ratio: 1935 / 781;
+  display: block;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  mask: url("../assets/Logo-mask.png") center / contain no-repeat;
+  -webkit-mask: url("../assets/Logo-mask.png") center / contain no-repeat;
 }
 
 .text-link,
@@ -675,11 +673,7 @@ textarea {
     background: #000000;
   }
 
-  .brand-logo {
-    filter: invert(1);
-  }
-
-  .brand-fallback {
+  .brand {
     color: #ffffff;
   }
 
