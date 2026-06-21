@@ -72,8 +72,12 @@ a {
 .brand-logo {
   display: block;
   width: min(270px, 48vw);
+}
+
+.brand-logo img {
+  display: block;
+  width: 100%;
   height: auto;
-  mix-blend-mode: difference;
 }
 
 .text-link,
