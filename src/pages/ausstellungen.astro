@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import InstagramLink from "../components/InstagramLink.astro";
 import PageHero from "../components/PageHero.astro";
 import { exhibitions } from "../data/site";
 
@@ -17,13 +18,18 @@ const archiveItems = [...exhibitions].reverse();
   <section class="section exhibition-archive">
     {archiveItems.map((item) => (
       <article>
-        <img src={`${base}${item.image}`} alt={item.alt} loading="lazy" />
+        <a class="exhibition-image-link" href={`${base}ausstellungen/${item.slug}/`}>
+          <img src={`${base}${item.image}`} alt={item.alt} loading="lazy" />
+        </a>
         <div>
           <p class="card-meta">{item.category} / {item.dates}</p>
-          <h2>{item.title}</h2>
+          <h2><a href={`${base}ausstellungen/${item.slug}/`}>{item.title}</a></h2>
           <p class="card-kicker">{item.artist} / {item.venue}</p>
           <p>{item.text} {item.collaboration}.</p>
-          <a class="text-link" href={item.instagram}>Instagram ansehen</a>
+          <div class="link-row">
+            <a class="text-link" href={`${base}ausstellungen/${item.slug}/`}>Mehr zur Ausstellung</a>
+            <InstagramLink href={item.instagram} />
+          </div>
         </div>
       </article>
     ))}

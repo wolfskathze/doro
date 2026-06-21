@@ -1,5 +1,5 @@
 ---
-import { menuItems, searchItems } from "../data/site";
+import { exhibitions, menuItems, searchItems } from "../data/site";
 
 interface Props {
   title: string;
@@ -11,6 +11,14 @@ const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL :
 const siteName = "Studierenden Galerie Spunst";
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
+const searchableItems = [
+  ...searchItems,
+  ...exhibitions.map((exhibition) => ({
+    href: `/ausstellungen/${exhibition.slug}/`,
+    title: exhibition.title,
+    text: `${exhibition.artist} ${exhibition.category} ${exhibition.dates} ${exhibition.venue}`,
+  })),
+];
 ---
 
 <!doctype html>
@@ -68,7 +76,7 @@ const pathFor = (href: string) => `${base}${href.replace(/^\//, "")}`;
         <a href={pathFor("/kontakt/")}>Kontakt</a>
       </nav>
     </footer>
-    <script type="application/json" id="search-data" set:html={JSON.stringify(searchItems.map((item) => ({
+    <script type="application/json" id="search-data" set:html={JSON.stringify(searchableItems.map((item) => ({
       ...item,
       href: pathFor(item.href),
     })))}></script>

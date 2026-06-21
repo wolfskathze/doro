@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  label?: string;
+}
+
+const { href, label = "Instagram ansehen" } = Astro.props;
+---
+
+<a class="instagram-link" href={href}>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+    <circle cx="12" cy="12" r="4"></circle>
+    <circle cx="17.5" cy="6.5" r="1"></circle>
+  </svg>
+  <span>{label}</span>
+</a>

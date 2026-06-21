@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
+
+const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <BaseLayout title="Dorothea Spunst" description="Persona, Lebenslauf und akademische Laufbahn der Galeristin Dorothea Spunst.">
@@ -9,6 +11,21 @@ import PageHero from "../components/PageHero.astro";
     title="Dorothea Spunst"
     text="Kunsthistorikerin, Kuratorin und Galeristin mit Schwerpunkt auf zeitgenössischer Malerei, Papierarbeiten und künstlerischer Vermittlung."
   />
+
+  <section class="section portrait-section">
+    <figure>
+      <img src={`${base}assets/portraits/dorothea-spunst.jpg`} alt="Dorothea Spunst in einer schwarz-weißen Porträtaufnahme" />
+    </figure>
+    <div class="copy-block">
+      <p class="eyebrow">Porträt</p>
+      <h2>Dorothea Spunst arbeitet zwischen kuratorischer Haltung, Einladung und performativer Präsenz.</h2>
+      <p>
+        Das Bild dient als erster visueller Anker für die Galeristin. Text, Bildunterschrift
+        und biografische Details können später noch genauer auf Dorotheas tatsächliche
+        Laufbahn abgestimmt werden.
+      </p>
+    </div>
+  </section>
 
   <section class="section timeline-section">
     <div>
