@@ -210,25 +210,24 @@ a {
 .menu-toggle {
   width: 44px;
   height: 44px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   justify-self: end;
-  gap: 4px;
   border: 0;
   background: transparent;
   color: #ffffff;
   cursor: pointer;
-  mix-blend-mode: difference;
   padding: 0;
 }
 
-.menu-toggle span:not(.sr-only) {
-  width: 18px;
-  height: 1px;
-  background: currentColor;
-  line-height: 0;
+.menu-icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .menu-toggle[aria-expanded="true"] {
@@ -876,7 +875,6 @@ textarea {
 
   .search-toggle,
   .menu-toggle {
-    border-color: #ffffff;
     background: transparent;
     color: #ffffff;
   }
