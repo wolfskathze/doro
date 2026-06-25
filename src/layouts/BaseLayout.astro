@@ -85,6 +85,18 @@ const searchableItems = [
       ...item,
       href: pathFor(item.href),
     })))}></script>
+    <div class="egg-overlay" aria-hidden="true">
+      <div class="egg-cursor" data-egg-cursor>
+        <img src={`${base}assets/egg-frame-00.png`} alt="" data-egg-frame />
+        <span class="egg-sheen"></span>
+        <span class="egg-crack crack-one"></span>
+        <span class="egg-crack crack-two"></span>
+        <span class="egg-crack crack-three"></span>
+      </div>
+      <div class="egg-artist" data-egg-artist hidden>
+        <img src={`${base}assets/franky-artist.png`} alt="" />
+      </div>
+    </div>
     <script src={`${base}scripts/site.js`}></script>
   </body>
 </html>
